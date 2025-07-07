@@ -1,4 +1,4 @@
-# refrigerator_IoT
+# Refrigerator_IoT
 
 Ubuntu 기반 Raspberry Pi 4에서 동작하는 냉장고 제어용 IoT 하드웨어 시스템
 온도 및 전류 센서를 통해 냉장고의 상태를 측정, RS485(Modbus RTU) 기반 온도제어기와 통신 가능
