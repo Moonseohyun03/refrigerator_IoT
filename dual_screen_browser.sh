@@ -44,8 +44,8 @@ CHROME_OPTIONS="
   --lang=ko
 "
 
-URL1="http://203.247.202.223:9999/kiosk/test1234/NO.1-1"
-URL2="http://203.247.202.223:9999/kiosk/test1234/NO.1-2"
+URL1="http://bistech-db.synology.me:57166/NO.1-1"
+URL2="http://bistech-db.synology.me:57166/NO.1-2"
 
 # 첫 번째 모니터에 Chromium 실행
 chromium-browser \
