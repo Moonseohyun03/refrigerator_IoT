@@ -241,6 +241,10 @@ def main(refrigerator_number: str, check_value: str):
     serial_port = open_rs485_serial()
     update_refrigerator_settings(serial_port, refrigerator_number, check_value, settings)
 
+    raspi_ip = get_ip_address()
+    raspi_serial = get_serial_number()
+
+
     while True:
         current_value = read_current()
         ds18b20_temp = read_ds18b20_temp()
@@ -252,8 +256,8 @@ def main(refrigerator_number: str, check_value: str):
             "setting_temp_value": str(settings['setting_temp_value_from_api']) if settings['setting_temp_value_from_api'] else None,
             "current_value": str(current_value) if current_value else None,
             "refrigerator_id": int(settings['refrigerator_id']) if settings['refrigerator_id'] else None,
-            "raspi_ip": get_ip_address(),
-            "raspi_serial": get_serial_number()
+            "raspi_ip":raspi_ip,
+            "raspi_serial" = raspi_serial
         }
 
         logging.info(f"전송할 데이터: {data_to_send}")
