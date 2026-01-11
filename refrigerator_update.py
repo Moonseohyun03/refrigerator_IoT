@@ -4,6 +4,7 @@ import requests
 import serial
 import socket
 import Adafruit_ADS1x15
+import math
 import logging
 from typing import Optional, Any, Dict
 from dotenv import load_dotenv
@@ -67,8 +68,8 @@ def ensure_env():
 # ==============================================================================
 # 2. 상수 및 전역 변수
 # ==============================================================================
-TEMP_API_BASE_URL = "http://bistech-db.synology.me:57166/api/refrigerator/raspi"
-DATA_POST_URL = "http://bistech-db.synology.me:57166/api/temperature"
+TEMP_API_BASE_URL = "https://bistech-db.synology.me/api/refrigerator/raspi"
+DATA_POST_URL = "https://bistech-db.synology.me/api/temperature"
 HEADERS = {"Authorization": "JWT"}  # 필요 시 토큰 추가
 
 SLAVE_ID = 1
@@ -257,7 +258,7 @@ def main(refrigerator_number: str, check_value: str):
             "current_value": str(current_value) if current_value else None,
             "refrigerator_id": int(settings['refrigerator_id']) if settings['refrigerator_id'] else None,
             "raspi_ip":raspi_ip,
-            "raspi_serial" = raspi_serial
+            "raspi_serial" : raspi_serial
         }
 
         logging.info(f"전송할 데이터: {data_to_send}")
@@ -291,6 +292,3 @@ if __name__ == "__main__":
         logging.info("사용자에 의해 프로그램이 종료되었습니다.")
     except Exception as e:
         logging.critical(f"예상치 못한 오류 발생: {e}")
-
-
-
