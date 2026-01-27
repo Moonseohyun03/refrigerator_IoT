@@ -1,0 +1,6 @@
+{
+  "TEMP_API_URL": "http://bistech-db.synology.me:57166/api/refrigerator/raspi",
+  "DATA_POST_URL": "http://bistech-db.synology.me:57166/api/temperature",
+  "JWT_TOKEN": "실제JWT토큰입력",
+  "RS485_PORT": "/dev/ttyUSB0"
+}
