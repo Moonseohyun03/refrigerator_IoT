@@ -68,9 +68,13 @@ def ensure_env():
 # ==============================================================================
 # 2. 상수 및 전역 변수
 # ==============================================================================
-TEMP_API_BASE_URL = "https://bistech-db.synology.me/api/refrigerator/raspi"
-DATA_POST_URL = "https://bistech-db.synology.me/api/temperature"
+TEMP_API_BASE_URL = "http://bistech-db.synology.me:57166/api/refrigerator/raspi"
+DATA_POST_URL = "http://bistech-db.synology.me:57166/api/temperature"
+TEMP_API_BASE_URL = "http://bistech-db.synology.me:/api/refrigerator/raspi" #port num 삭제
+DATA_POST_URL = "http://bistech-db.synology.me:/api/temperature"
 HEADERS = {"Authorization": "JWT"}  # 필요 시 토큰 추가
+
+SLAVE_ID = 1
 
 SLAVE_ID = 1
 REG_ADDR_TEMP_SET = 0x0002
